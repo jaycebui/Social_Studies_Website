@@ -1,0 +1,108 @@
+/* Portal Stylesheet - Boxed & Floating */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #1a202c 0%, #000000 100%);
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+    color: white;
+}
+
+.portal-wrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.floating-bg {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 10rem;
+    font-weight: 900;
+    opacity: 0.03;
+    letter-spacing: 20px;
+    pointer-events: none;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.portal-nav {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.portal-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px; 
+    height: 220px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: floatEffect 6s ease-in-out infinite;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.portal-link:nth-child(1) {
+    color: #b794f4;
+    animation-delay: 0s;
+}
+
+.portal-link:nth-child(2) {
+    color: #ecc94b;
+    animation-delay: 3s;
+}
+
+.portal-link:hover {
+    transform: scale(1.08) translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    animation-play-state: paused;
+}
+
+.portal-link:nth-child(1):hover {
+    border-color: #9f7aea;
+    box-shadow: 0 0 50px rgba(159, 122, 234, 0.4);
+}
+
+.portal-link:nth-child(2):hover {
+    border-color: #d4af37;
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.4);
+}
+
+.portal-link h1 {
+    margin: 0;
+    font-size: 2.1rem; 
+    letter-spacing: 4px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.portal-link p {
+    margin: 15px 0 0 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    opacity: 0.6;
+}
+
+@keyframes floatEffect {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-25px); }
+}
