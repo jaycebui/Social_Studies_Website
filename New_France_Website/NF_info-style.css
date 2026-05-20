@@ -1,0 +1,204 @@
+/* --- Global Styles --- */
+body {
+    background-color: #fdfaf3; /* Soft cream/parchment background */
+    color: #2d3748;
+    font-family: 'Georgia', serif; /* Classic historical feel */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Header Section --- */
+.main-header {
+    background-color: #1a365d; /* Deep naval blue */
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #d4af37; /* Gold accent line */
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-style: italic;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* --- Navigation & Back Link --- */
+.back-nav {
+    margin: 20px 0 0 30px;
+}
+
+.back-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.back-link span {
+    color: #1a365d;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    transition: color 0.4s ease;
+}
+
+.back-link:hover span {
+    color: #00209F;
+}
+
+.back-link:hover {
+    transform: translateX(-5px); /* Slides back toward the arrow */
+}
+
+/* --- Directory Navigation (The Grid) --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.directory-nav {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 10px solid #d4af37; /* Gold "book spine" effect */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.directory-nav strong {
+    display: block;
+    margin-bottom: 15px;
+    color: #1a365d;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 12px;
+}
+
+/* The Invisible Box (Keeps Grid Even) */
+.nav-grid a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+/* The Visible Text (Only this turns blue/moves) */
+.nav-grid a span {
+    color: #1a365d;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: color 0.4s ease, transform 0.2s ease;
+}
+
+.nav-grid a span:hover {
+    color: #00209F;
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+/* --- Quiz Banner --- */
+.quiz-banner {
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    margin-bottom: 40px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.quiz-banner a {
+    text-decoration: none;
+}
+
+.quiz-banner span {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.quiz-banner:hover span {
+    transform: scale(1.05);
+}
+
+/* --- Content Sections --- */
+.content-container section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+h2 {
+    color: #1a365d;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.subtitle {
+    text-align: center; 
+    color: #D4AF37; /* Cleaned up the quote and added a semicolon */
+}
+
+/* 1. The Base State (Non-hover) */
+.quiz-banner {
+    background: #d4af37; /* Initial Gold */
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    /* This makes the background change smooth */
+    transition: background-color 0.3s ease-in-out; 
+}
+
+.quiz-banner span {
+    color: #1a365d; /* Initial Dark Blue */
+    font-weight: bold;
+    display: inline-block;
+    /* This makes the text color change smooth */
+    transition: color 0.3s ease-in-out, transform 0.35s ease;
+}
+
+/* 2. The Hover State */
+.quiz-banner:hover {
+    background-color: #00209F; /* The Royal Blue you wanted */
+}
+
+.quiz-banner:hover span {
+    /* A more vibrant 'Madder Red' that stands out on blue */
+    color: #FF4D4D; 
+    transform: scale(1.02); /* Very slight growth instead of jerky expansion */
+}
+
+p {
+    font-size: 1.05rem;
+    color: #4a5568;
+    text-align: justify;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #718096;
+    font-size: 0.9rem;
+    border-top: 1px solid #e2e8f0;
+}

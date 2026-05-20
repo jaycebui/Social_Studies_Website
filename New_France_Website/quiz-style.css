@@ -1,0 +1,200 @@
+:root {
+    /* New France Color Palette */
+    --primary: #1a365d;        /* Royal Naval Blue */
+    --accent: #d4af37;         /* Colonial Gold */
+    --success-bg: #f0fff4;     /* Light green for correct */
+    --success-border: #48bb78; /* Bold green */
+    --error-bg: #fff5f5;       /* Light red for wrong */
+    --error-border: #f56565;   /* Bold red */
+    --bg: #fdfaf3;             /* Parchment/Antique Paper background */
+}
+
+/* Page Layout */
+body { 
+    font-family: 'Georgia', serif; /* More historical feel */
+    background: var(--bg); 
+    margin: 0; 
+    padding: 40px 20px; 
+    color: #2d3748; 
+    line-height: 1.6;
+}
+
+.exam-container { 
+    max-width: 850px; 
+    margin: 0 auto; 
+}
+
+/* Header Section */
+.header { 
+    text-align: center; 
+    margin-bottom: 50px; 
+    color: white; 
+    background: var(--primary);
+    padding: 40px;
+    border-radius: 10px;
+    border-bottom: 5px solid var(--accent);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Back Link Styling */
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    transition: transform 0.2s ease;
+}
+
+.back-link:hover {
+    transform: translateX(-5px);
+    text-decoration: underline;
+}
+
+/* The Long-Screen "Card" Style */
+.question-card { 
+    background: white; 
+    padding: 35px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+    margin-bottom: 35px;
+    border-left: 8px solid #cbd5e0; /* Neutral grey until answered */
+    transition: transform 0.2s ease, border-color 0.4s ease;
+}
+
+/* Visual change when answered */
+.question-card.answered-correct { border-left-color: var(--success-border); }
+.question-card.answered-wrong { border-left-color: var(--error-border); }
+
+.q-text { 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    margin-bottom: 25px; 
+    color: var(--primary);
+}
+
+/* Buttons and Options */
+.option-list { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 12px; 
+}
+
+.opt-btn { 
+    padding: 18px 25px; 
+    border: 2px solid #e2e8f0; 
+    border-radius: 5px; 
+    background: #fff; 
+    cursor: pointer; 
+    text-align: left; 
+    font-size: 1.05rem; 
+    transition: all 0.3s ease;
+    width: 100%;
+    color: #4a5568;
+    font-family: Arial, sans-serif;
+}
+
+.opt-btn:hover:not(:disabled) { 
+    background: #f8fafc; 
+    border-color: var(--accent);
+    transform: translateX(8px); /* Smooth slide like your info nav */
+}
+
+/* Result States for buttons */
+.opt-btn.correct { 
+    background: var(--success-border) !important; 
+    color: white; 
+    border-color: var(--success-border); 
+}
+
+.opt-btn.wrong { 
+    background: var(--error-border) !important; 
+    color: white; 
+    border-color: var(--error-border); 
+}
+
+.opt-btn.disabled { 
+    cursor: default; 
+    opacity: 0.8; 
+}
+
+/* Explanation Box styling */
+.explanation { 
+    margin-top: 25px; 
+    padding: 20px; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    display: none; 
+}
+
+.explanation.visible { display: block; }
+
+.exp-correct { 
+    background: var(--success-bg); 
+    border: 1px solid var(--success-border); 
+    color: #22543d; 
+}
+
+.exp-wrong { 
+    background: var(--error-bg); 
+    border: 1px solid var(--error-border); 
+    color: #822727; 
+}
+
+/* Bottom Final Result Card */
+.result-card { 
+    background: var(--primary); 
+    color: white; 
+    padding: 50px; 
+    border-radius: 10px; 
+    text-align: center; 
+    margin-top: 60px;
+    border-top: 8px solid var(--accent);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.final-score-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: var(--accent);
+}
+
+/* Action Buttons */
+.restart-btn, .scroll-btn {
+    margin: 10px;
+    padding: 15px 35px; 
+    border: none; 
+    border-radius: 5px;
+    font-weight: 700; 
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.restart-btn {
+    background: var(--accent); 
+    color: var(--primary);
+}
+
+.restart-btn:hover {
+    background: #ffdb58; /* Brighter gold */
+    transform: translateY(-2px);
+}
+
+.scroll-btn {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid white;
+}
+
+.scroll-btn:hover {
+    background: white;
+    color: var(--primary);
+}

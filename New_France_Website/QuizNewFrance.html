@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam - The History of New France</title>
+    <link rel="stylesheet" href="quiz-style.css">
+</head>
+<body>
+
+<div class="exam-container">
+    <header class="header">
+        <h1>New France Knowledge Challenge</h1>
+        <p>Prove your expertise on the social, political, and territorial organization of the colony.</p>
+    </header>
+
+    <div class="nav-container">
+        <a href="NewFranceIndex.html" class="back-link">← Return to Interactive Map</a>
+    </div>
+
+    <main id="questions-wrapper">
+        </main>
+
+    <div id="final-result-card" class="result-card" style="display: none;">
+        <h2>Evaluation Complete</h2>
+        <p>Your performance in the New France Historical Dossier:</p>
+        <div class="final-score-display" id="final-score-text"></div>
+        
+        <div class="result-actions">
+            <button onclick="location.reload()" class="restart-btn">Restart Exam</button>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="scroll-btn">Return to Top</button>
+        </div>
+    </div>
+</div>
+
+<script src="quiz-logic.js"></script>
+</body>
+</html>
