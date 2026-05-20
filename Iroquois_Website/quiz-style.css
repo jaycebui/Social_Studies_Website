@@ -1,0 +1,151 @@
+:root {
+    --primary: #4a1a4c;       /* Haudenosaunee Purple */
+    --success-bg: #f0fff4;    /* Light green background for correct answers */
+    --success-border: #48bb78;/* Bold green for correct borders */
+    --error-bg: #fff5f5;      /* Light red background for wrong answers */
+    --error-border: #f56565;  /* Bold red for wrong borders */
+    --bg: #f7fafc;            /* Light grey page background */
+}
+
+/* Page Layout */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: var(--bg); 
+    margin: 0; 
+    padding: 40px 20px; 
+    color: #2d3748; 
+    line-height: 1.6;
+}
+
+.exam-container { 
+    max-width: 850px; 
+    margin: 0 auto; 
+}
+
+/* Header Section */
+.header { 
+    text-align: center; 
+    margin-bottom: 50px; 
+    color: var(--primary); 
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* The Long-Screen "Card" Style */
+.question-card { 
+    background: white; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+    margin-bottom: 35px;
+    border-left: 8px solid #cbd5e0; /* Neutral grey until answered */
+    transition: transform 0.2s ease, border-color 0.4s ease;
+}
+
+/* Visual change when answered */
+.question-card.answered-correct { border-left-color: var(--success-border); }
+.question-card.answered-wrong { border-left-color: var(--error-border); }
+
+.q-text { 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    margin-bottom: 20px; 
+    color: #1a202c;
+}
+
+/* Buttons and Options */
+.option-list { 
+    display: grid; 
+    grid-template-columns: 1fr; /* Stacked vertically for "long screen" feel */
+    gap: 12px; 
+}
+
+.opt-btn { 
+    padding: 15px 20px; 
+    border: 2px solid #e2e8f0; 
+    border-radius: 10px; 
+    background: white; 
+    cursor: pointer; 
+    text-align: left; 
+    font-size: 1.05rem; 
+    transition: all 0.2s ease;
+    width: 100%;
+    color: #4a5568;
+}
+
+.opt-btn:hover:not(:disabled) { 
+    background: #fdfaff; 
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+/* Result States for buttons */
+.opt-btn.correct { 
+    background: var(--success-border) !important; 
+    color: white; 
+    border-color: var(--success-border); 
+}
+
+.opt-btn.wrong { 
+    background: var(--error-border) !important; 
+    color: white; 
+    border-color: var(--error-border); 
+}
+
+.opt-btn.disabled { 
+    cursor: default; 
+    opacity: 0.8; 
+}
+
+/* Explanation Box styling */
+.explanation { 
+    margin-top: 20px; 
+    padding: 20px; 
+    border-radius: 10px; 
+    font-size: 1rem; 
+    display: none; /* Hidden until button is clicked */
+}
+
+.explanation.visible { display: block; }
+
+.exp-correct { 
+    background: var(--success-bg); 
+    border: 1px solid var(--success-border); 
+    color: #22543d; 
+}
+
+.exp-wrong { 
+    background: var(--error-bg); 
+    border: 1px solid var(--error-border); 
+    color: #822727; 
+}
+
+/* Bottom Final Result Card */
+.result-card { 
+    background: var(--primary); 
+    color: white; 
+    padding: 50px; 
+    border-radius: 20px; 
+    text-align: center; 
+    margin-top: 60px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.restart-btn {
+    margin-top: 25px; 
+    padding: 15px 45px; 
+    border: none; 
+    border-radius: 12px;
+    font-weight: 700; 
+    cursor: pointer;
+    background: white; 
+    color: var(--primary);
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+.restart-btn:hover {
+    background: #f0f0f0;
+}

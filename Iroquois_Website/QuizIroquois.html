@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haudenosaunee & St. Lawrence History Exam</title>
+    <link rel="stylesheet" href="quiz-style.css">
+</head>
+<body>
+
+<div class="exam-container">
+    <div class="header">
+        <h1>Haudenosaunee & St. Lawrence Iroquois</h1>
+        <p>Complete all questions to see your final score at the bottom.</p>
+    </div>
+
+     <a href="IroquoisIndex.html" style="color: #2c5282; font-weight: bold; text-decoration: underline;">Back to Main Page</a>
+    <br>
+    <div id="questions-wrapper">
+        </div>
+
+    <div id="final-result-card" class="result-card" style="display: none;">
+        <h2>Exam Complete!</h2>
+        <div class="final-score-display" id="final-score-text"></div>
+        <button onclick="location.reload()" class="restart-btn">Reset Quiz</button>
+        <br>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="scroll-btn">Back to Top</button>
+    </div>
+</div>
+
+<script src="quiz-logic.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* --- Global Styles --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Map Section --- */
+#map {
+    height: 55vh;
+    width: 100%;
+    border-bottom: 3px solid #2c5282;
+    background: #e0e0e0;
+}
+
+/* --- Control Panel --- */
+.controls {
+    padding: 15px 30px;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-box {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #2c5282;
+    letter-spacing: -1px;
+}
+
+/* --- Buttons --- */
+.playback-controls {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 18px;
+    background: #2b6cb0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #2c5282;
+    transform: translateY(-1px);
+}
+
+#back-popup-btn {
+    background: #e53e3e;
+}
+
+#back-popup-btn:hover {
+    background: #c53030;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Timeline Slider --- */
+#timeline-slider {
+    width: 100%;
+    accent-color: #2b6cb0;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #4a5568;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* --- Info Blocks (The 4 Cards) --- */
+.content-grid {
+    display: grid;
+    /* This creates 4 columns for your 4 new IDs */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.info-block {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 5px solid #2b6cb0;
+    min-height: 90px;
+    transition: background 0.2s ease;
+}
+
+.info-block:hover {
+    background: #f1f5f9;
+}
+
+.info-block strong {
+    display: block;
+    color: #2c5282;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* Styling for the text injected by JavaScript */
+#Lifestyle, #Entertainment, #Territory, #Governance {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #1c2d4b;
+    margin: 0;
+    font-weight: 500;
+    text-align: left;
+}
+
+.info-block {
+    min-height: 280px; /* Increased to fit the new text volume */
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/*Styling for Open Popup Button*/
+#event-trigger-btn {
+    background: #f59e0b; /* Amber/Gold color */
+    animation: pulse 2s infinite;
+}
+/* This one block controls ALL search bars in your footer */
+.search-input {
+    width: 100%;          /* Starts at full width of the card */
+    max-width: 350px;     /* Change this number to set the exact length you want */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    display: block;       /* Makes it sit on its own line */
+}
+/* This makes ONLY the main global search bar bigger */
+#master-global-search {
+    width: 100%;           /* Fills the container */
+    max-width: 600px;      /* Makes it much longer than the others */
+    padding: 8px;         /* Makes it taller/chunkier */
+    font-size: 1.1rem;     /* Makes the text inside bigger */
+    border: 1px solid #2b6cb0; /* Makes the border thicker to stand out */
+    margin: 10px auto;     /* Centers it if the container is wider than 600px */
+    display: block;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #2b6cb0;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+#event-trigger-btn:hover {
+    background: #d97706;
+}
+
+/* Container to hold the input and the X */
+.search-wrapper {
+    position: relative;
+    max-width: 600px; /* Matches your Global Search width */
+    margin: 10px auto;
+}
+
+/* This targets the little "X" that appears in type="search" */
+.search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232b6cb0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cline x1='18' y1='6' x2='6' y2='18'%3e%3c/line%3e%3cline x1='6' y1='6' x2='18' y2='18'%3e%3c/line%3e%3c/svg%3e");
+    background-size: contain;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Move the X button into position */
+.clear-btn {
+    position: absolute;
+    right: 12px;         /* Move it slightly in from the edge */
+    top: 50%;            /* Start at the middle of the parent */
+    transform: translateY(-50%); /* Pull it back up by half its own height */
+    background: none;
+    border: none;
+    color: #cbd5e0;
+    font-size: 20px;
+    line-height: 1;      /* Keeps the 'X' from being taller than it looks */
+    cursor: pointer;
+    padding: 0;
+    z-index: 2;          /* Ensure it stays on top of the input */
+}
+
+.clear-btn:hover {
+    color: #ff0000;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- Map Markers --- */
+.custom-icon {
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    outline: 5px solid transparent;
+}
+
+.custom-icon:hover {
+    transform: scale(1.1);
+}
+
+/* --- Footer & Master Lists --- */
+.info-footer {
+    padding: 30px;
+    background: #edf2f7;
+    border-top: 2px solid #cbd5e0;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+    margin-top: 0;
+    color: #2d3748;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.master-list {
+    height: 250px;
+    overflow-y: auto;
+    margin-top: 5px;
+    padding: 10px;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.master-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.master-list li {
+    padding: 8px;
+    border-bottom: 1px solid #edf2f7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-link {
+    color: #2b6cb0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.site-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr; /* Switch to 2x2 on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Stack footer lists on mobile */
+    }
+    .info-box {
+        font-size: 1.6rem;
+    }
+}
+
+/* Custom Scrollbar */
+.master-list::-webkit-scrollbar { width: 6px; }
+.master-list::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
